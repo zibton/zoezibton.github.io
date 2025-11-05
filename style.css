@@ -1,28 +1,21 @@
-/* Global background gradient */
+/* Global text and layout */
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  color: #1a1a1a;
   line-height: 1.6;
-  background: linear-gradient(to bottom, #008b8b 0%, #20b2aa 25%, #40e0d0 60%, #b2dfdb 100%);
-  background-attachment: fixed; /* keeps gradient stable when scrolling */
-  min-height: 100vh;
+  color: #fff;
 }
 
-/* Center layout */
-header, main, footer {
-  max-width: 900px;
-  margin: auto;
-  padding: 2rem;
-}
-
-/* Header section */
-header {
-  text-align: center;
-  color: white;
+/* Remove margins/gaps between everything */
+header, section, footer {
+  margin: 0;
   padding: 3rem 1rem;
-  background: rgba(0, 0, 0, 0.2); /* translucent overlay for contrast */
-  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+/* Header – most saturated teal */
+header {
+  background-color: #00797a;
+  text-align: center;
 }
 
 header h1 {
@@ -38,7 +31,7 @@ header p {
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #e0f7f7;
+  color: #dffdfc;
   font-weight: 500;
 }
 
@@ -46,35 +39,23 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Semi-transparent sections ("cards") */
-section {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 2rem;
-  margin: 2rem 0;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  backdrop-filter: blur(6px); /* adds a frosted glass effect on modern browsers */
+/* Full-width sections with progressive colors */
+#about { background-color: #199c9d; }
+#research { background-color: #30b8b8; }
+#publications { background-color: #5cc9c9; }
+#contact { background-color: #9adbd8; color: #082f2f; }
+
+/* Limit text width inside each section */
+.content {
+  max-width: 900px;
+  margin: auto;
 }
 
-section h2 {
-  margin-top: 0;
-}
-
-/* Links and hover */
-a {
-  color: #006666;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Footer */
+/* Footer – very light, muted teal */
 footer {
+  background-color: #c9e8e5;
+  color: #083a3a;
   text-align: center;
-  font-size: 0.9em;
-  color: #f0f0f0;
+  font-size: 0.9rem;
   padding: 2rem 1rem;
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 1.5rem 1.5rem 0 0;
 }
