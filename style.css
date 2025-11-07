@@ -9,10 +9,6 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
   color: #222;
-}
-
-/* --- Continuous Gradient Infrastructure --- */
-body {
   background: linear-gradient(
     to bottom,
     #008b8b 0%,
@@ -23,7 +19,7 @@ body {
   );
 }
 
-/* Remove default white gaps between sections */
+/* --- Layout resets --- */
 section, header, footer {
   margin: 0;
   padding: 0;
@@ -35,7 +31,7 @@ header {
   text-align: center;
   color: white;
   padding: 4rem 1rem;
-  background: transparent; /* uses top of the gradient */
+  background: transparent;
 }
 
 header h1 {
@@ -43,16 +39,32 @@ header h1 {
   letter-spacing: 1px;
 }
 
-header h2 {
+header p {
   font-weight: 300;
   margin-top: 0.5rem;
 }
 
+/* Navigation */
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
 /* About section — text left, photo right */
-.about {
+#about {
   display: flex;
   min-height: 100vh;
-  background: transparent; /* continues gradient */
 }
 
 .about-text {
@@ -62,7 +74,7 @@ header h2 {
   flex-direction: column;
   justify-content: center;
   color: #003d3d;
-  background: rgba(234,244,242,0.7); /* translucent overlay for readability */
+  background: rgba(234,244,242,0.7);
   backdrop-filter: blur(2px);
 }
 
@@ -70,27 +82,37 @@ header h2 {
   flex: 1;
   background-image:
     linear-gradient(to left, rgba(0,139,139,0.6), rgba(0,139,139,0.1)),
-    url("./files/Eddy_Zoe.jpg");
+    url("assets/photo.jpg");
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
 }
 
-/* Research section */
-.research {
+/* Research, Publications, Contact */
+#research, #publications, #contact {
   padding: 4rem 2rem;
-  background: transparent; /* uses lower gradient tones */
+  background: transparent;
+  color: #003d3d;
 }
 
-.research h2 {
+h2 {
   color: #004f4f;
   margin-bottom: 1.5rem;
 }
 
-.research ul {
+ul {
   list-style-type: square;
   padding-left: 1.5rem;
-  color: #003d3d;
+}
+
+/* Links */
+a {
+  color: #005f5f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
@@ -103,7 +125,7 @@ footer {
 
 /* Responsive layout */
 @media (max-width: 800px) {
-  .about {
+  #about {
     flex-direction: column;
     height: auto;
   }
@@ -115,5 +137,10 @@ footer {
 
   .about-text {
     padding: 2rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
   }
 }
