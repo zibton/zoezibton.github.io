@@ -11,12 +11,31 @@ body {
   color: #222;
 }
 
-/* Header gradient */
+/* --- Continuous Gradient Infrastructure --- */
+body {
+  background: linear-gradient(
+    to bottom,
+    #008b8b 0%,
+    #68b9b3 25%,
+    #a7d4cf 50%,
+    #dcefed 75%,
+    #eaf4f2 100%
+  );
+}
+
+/* Remove default white gaps between sections */
+section, header, footer {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Header */
 header {
-  background: linear-gradient(to bottom right, #008b8b, #a7d4cf);
-  color: white;
   text-align: center;
+  color: white;
   padding: 4rem 1rem;
+  background: transparent; /* uses top of the gradient */
 }
 
 header h1 {
@@ -32,23 +51,25 @@ header h2 {
 /* About section — text left, photo right */
 .about {
   display: flex;
-  height: 100vh;
-  flex-direction: row; /* text left, photo right */
+  min-height: 100vh;
+  background: transparent; /* continues gradient */
 }
 
 .about-text {
   flex: 1;
-  background-color: #eaf4f2;
   padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #003d3d;
+  background: rgba(234,244,242,0.7); /* translucent overlay for readability */
+  backdrop-filter: blur(2px);
 }
 
 .about-photo {
   flex: 1;
-  background-image: 
-    linear-gradient(to left, rgba(0,139,139,0.8), rgba(0,139,139,0.2)), 
+  background-image:
+    linear-gradient(to left, rgba(0,139,139,0.6), rgba(0,139,139,0.1)),
     url("./files/Eddy_Zoe.jpg");
   background-size: cover;
   background-position: center;
@@ -57,8 +78,8 @@ header h2 {
 
 /* Research section */
 .research {
-  background-color: #dcefed;
   padding: 4rem 2rem;
+  background: transparent; /* uses lower gradient tones */
 }
 
 .research h2 {
@@ -69,26 +90,27 @@ header h2 {
 .research ul {
   list-style-type: square;
   padding-left: 1.5rem;
+  color: #003d3d;
 }
 
 /* Footer */
 footer {
-  background-color: #b5dcd9;
   text-align: center;
   padding: 1.5rem;
   color: #003d3d;
+  background: transparent;
 }
 
 /* Responsive layout */
 @media (max-width: 800px) {
   .about {
-    flex-direction: column; /* stack for smaller screens */
+    flex-direction: column;
     height: auto;
   }
 
   .about-photo {
     height: 50vh;
-    order: -1; /* puts photo on top on mobile */
+    order: -1;
   }
 
   .about-text {
