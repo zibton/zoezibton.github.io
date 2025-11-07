@@ -82,7 +82,7 @@ nav a:hover {
   flex: 1;
   background-image:
     linear-gradient(to left, rgba(0,139,139,0.6), rgba(0,139,139,0.1)),
-    url("./files/Eddy_Zoe.jpg");
+    url("/files/Eddy_Zoe.jpg");
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
